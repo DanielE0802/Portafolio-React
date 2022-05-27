@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Sections from './components/Sections'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ul id="myMenu">
+        <li data-menuanchor="firstPage" class="active" id="firstPage">
+          <a href="#firstPage">First section</a>
+        </li>
+        <li data-menuanchor="secondPage" id="secondPage">
+          <a href="#secondPage">Second section</a>
+        </li>
+        <li data-menuanchor="thirdPage">
+          <a href="#thirdPage">Third section</a>
+        </li>
+        <li data-menuanchor="fourthPage">
+          <a href="#fourthPage">Fourth section</a>
+        </li>
+      </ul>
+      <Sections></Sections>
     </div>
   );
 }
