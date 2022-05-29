@@ -1,23 +1,28 @@
+import { Menú, PortalMenú } from './components/Menú';
 import Sections from './components/Sections'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import "./scss/style.scss"
+
+const darkTheme = createTheme({
+  palette: {
+    primary: {
+      main  :"#1B1C31"
+    },
+    secondary: {
+      main:"#26273B"
+    }
+
+  }
+})
+
 
 function App() {
   return (
     <div className="App">
-      <ul id="myMenu">
-        <li data-menuanchor="firstPage" class="active" id="firstPage">
-          <a href="#firstPage">First section</a>
-        </li>
-        <li data-menuanchor="secondPage" id="secondPage">
-          <a href="#secondPage">Second section</a>
-        </li>
-        <li data-menuanchor="thirdPage">
-          <a href="#thirdPage">Third section</a>
-        </li>
-        <li data-menuanchor="fourthPage">
-          <a href="#fourthPage">Fourth section</a>
-        </li>
-      </ul>
-      <Sections></Sections>
+      <ThemeProvider theme={darkTheme}>
+        <Sections ></Sections>
+        <PortalMenú></PortalMenú>
+      </ThemeProvider>
     </div>
   );
 }

@@ -1,0 +1,89 @@
+@import "normalize.scss";
+$background_primary--ligth:#fff;
+$color_primary--ligth:#2730e1;
+$color_secondary--ligth:#18dd2f;
+$color_blue--ligth:#20C5D4;
+
+
+$background_primary--dark: #1B1C31;
+$color_primary--dark:#26273B;
+$color_secondary--dark:#A2ABA3;
+$color_blue--dark:#20a7d4;
+
+.theme {
+    &.ligth {
+        --background__primary:#{$background_primary--ligth};
+        --color__primary:#{$color_primary--ligth};
+        --color__secondary:#{$color_secondary--ligth};
+        --color__blue:#{$color_blue--ligth};
+
+    }
+
+    &.dark {
+        --background__primary:#{$background_primary--dark};
+        --color__primary:#{$color_primary--dark};
+        --color__secondary:#{$color_secondary--dark};
+        --color__blue:#{$color_blue--dark};
+    }
+}
+
+body {
+    background: var(--background__primary);
+}
+
+.left-menu {
+    background: var(--color__primary);
+    position: fixed;
+    bottom: 10%;
+    left: 30px;
+    list-style: none;
+    border-radius: 20px;
+    height: 80%;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .left-menu__item {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {}
+
+        svg {
+            color: var(--color__secondary);
+            width: 35px;
+            height: 35px;
+            transition: color 0.2s ease;
+
+        }
+
+        .tag {
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &.active {
+            background: var(--color__blue);
+            border-radius: 100%;
+            border: 10px solid var(--background__primary);
+
+            svg {
+                color: var(--color__primary);
+            }
+
+            position: relative;
+            left: 70%;
+
+        }
+    }
+
+
+
+}
